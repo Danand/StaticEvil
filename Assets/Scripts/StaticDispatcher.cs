@@ -1,8 +1,24 @@
-﻿internal static class StaticDispatcher
+﻿using UnityEngine;
+
+namespace StaticEvil
 {
-    public static void DestroyOnCurrentSceneUnloaded<T>(Static<T> wrapper)
-        where T : class
+    internal static class StaticDispatcher
     {
-        throw new System.NotImplementedException();
+        private static readonly StaticHolder staticHolder;
+
+        static StaticDispatcher()
+        {
+            if (Application.isPlaying)
+            {
+                staticHolder = new GameObject().AddComponent<StaticHolder>();
+                staticHolder.hideFlags = HideFlags.HideInHierarchy;
+            }
+        }
+
+        public static void DestroyOnCurrentSceneUnloaded<T>(Static<T> wrapper)
+            where T : class
+        {
+            staticHolder.Add(wrapper);
+        }
     }
 }
