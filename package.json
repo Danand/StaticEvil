@@ -1,0 +1,14 @@
+{
+  "name": "com.danand.staticevil",
+  "category": "Scripting", 
+  "displayName": "Static Evil",
+  "author": "danand <danand@inbox.ru> (https://github.com/danand)",
+  "description": "Wrapper for safe static keyword usage.",
+  "version": "0.1.0",
+  "unity": "2019.3",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/Danand/StaticEvil.git"
+  },
+  "keywords": [ "static", "services" ]
+}
