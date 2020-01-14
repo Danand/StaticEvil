@@ -19,7 +19,7 @@ namespace StaticEvil
             }
         }
 
-        public static void DestroyOnCurrentSceneUnloaded<T>(Static<T> wrapper)
+        public static void DestroyOnCurrentSceneUnloaded<T>(Evil<T> wrapper)
             where T : class
         {
             staticHolder.Add(wrapper);
@@ -28,9 +28,7 @@ namespace StaticEvil
         private static void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
         {
             if (loadSceneMode == LoadSceneMode.Single)
-            {
                 staticHolder = CreateHolder();
-            }
         }
 
         private static void OnSceneUnloaded(Scene scene)

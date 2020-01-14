@@ -8,7 +8,7 @@ namespace StaticEvil.Examples
 {
     public class GameManager : MonoBehaviour
     {
-        private static Static<ShopManager> shopManager;
+        private static Evil<ShopManager> shopManager;
 
         async void Start()
         {

@@ -15,7 +15,7 @@ namespace StaticEvil
                 staticWrapper.Dispose();
         }
 
-        public void Add<T>(Static<T> wrapper)
+        public void Add<T>(Evil<T> wrapper)
             where T : class
         {
             staticWrappers.Add(wrapper);

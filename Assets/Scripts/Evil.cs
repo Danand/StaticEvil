@@ -2,7 +2,7 @@
 
 namespace StaticEvil
 {
-    public sealed class Static<T> : IDisposable
+    public sealed class Evil<T> : IDisposable
         where T : class
     {
         public T Value { get; private set; }
@@ -12,14 +12,14 @@ namespace StaticEvil
             Value = null;
         }
 
-        private Static()
+        private Evil()
         {
             StaticDispatcher.DestroyOnCurrentSceneUnloaded(this);
         }
 
-        public static implicit operator Static<T>(T value)
+        public static implicit operator Evil<T>(T value)
         {
-            return new Static<T> { Value = value };
+            return new Evil<T> { Value = value };
         }
     }
 }
