@@ -12,9 +12,7 @@ namespace StaticEvil
         void OnDestroy()
         {
             foreach (var staticWrapper in staticWrappers)
-            {
                 staticWrapper.Dispose();
-            }
         }
 
         public void Add<T>(Static<T> wrapper)
